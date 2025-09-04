@@ -33,12 +33,10 @@ export class PostsService {
   findMany({ skip, limit }: FindManyOptions = {}) {
     let foundPosts = this.posts;
 
-    // Stryker disable next-line ConditionalExpression: The "true" mutant results in an equivalent mutant
     if (skip !== undefined) {
       foundPosts = foundPosts.slice(skip);
     }
 
-    // Stryker disable next-line ConditionalExpression: The "true" mutant results in an equivalent mutant
     if (limit !== undefined) {
       foundPosts = foundPosts.slice(0, limit);
     }
@@ -62,5 +60,9 @@ export class PostsService {
     }
 
     Object.assign(postToUpdate, post);
+  }
+
+  getAllPosts() {
+    return this.posts;
   }
 }
