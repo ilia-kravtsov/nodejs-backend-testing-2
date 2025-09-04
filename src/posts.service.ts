@@ -63,4 +63,8 @@ export class PostsService {
 
     Object.assign(postToUpdate, post);
   }
+
+  getAllPosts() {
+    return this.posts;
+  }
 }
